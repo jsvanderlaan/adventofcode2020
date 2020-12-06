@@ -6,10 +6,9 @@ var data = "tzibqaulrw bratip trbhia rtiab  sgqytjiw gkwqybtims  tufcqanysox ovu
 var example = "abc  a b c  ab ac  a a a a  b";
 
 var ans = data
-    .Replace("  ", "-")
-    .Replace(" ", string.Empty)
-    .Split("-")
+    .Split("  ")
     .Select(group => group
+        .Replace(" ", string.Empty)
         .Distinct()
         .Count())
     .Sum();
